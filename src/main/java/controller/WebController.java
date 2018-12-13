@@ -27,4 +27,9 @@ public class WebController {
     public Contact getContact(@PathVariable String nickname) {
         return contactService.getContact(nickname);
     }
+
+    @RequestMapping(value = "/contact", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Contact postContact(@RequestBody Contact contact) {
+        return contactService.getContact(contact.getNickname());
+    }
 }
